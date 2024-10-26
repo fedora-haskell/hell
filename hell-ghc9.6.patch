@@ -1,0 +1,27 @@
+commit 39eb4fa97f48fb9462fe101c52af033203ad0b02
+Author: Jens Petersen <petersen@redhat.com>
+Date:   Sat Oct 26 15:13:45 2024 +0800
+
+    for ghc-9.6: import when and hide List
+
+diff --git a/src/Hell.hs b/src/Hell.hs
+index 5307d7b..868cb4d 100644
+--- a/src/Hell.hs
++++ b/src/Hell.hs
+@@ -65,6 +65,7 @@ import qualified Options.Applicative as Options
+ import Data.Traversable
+ import Data.Bifunctor
+ import System.Process.Typed as Process
++import Control.Monad
+ import Control.Monad.State.Strict
+ import Control.Monad.Reader
+ import System.Environment
+@@ -74,7 +75,7 @@ import Data.Vector (Vector)
+ import Data.Aeson (Value)
+ import Data.Text (Text)
+ import Data.ByteString (ByteString)
+-import GHC.Types
++import GHC.Types hiding (List)
+ import GHC.TypeLits
+ import Type.Reflection (SomeTypeRep(..), TypeRep, typeRepKind, typeRep, pattern TypeRep)
+ 
